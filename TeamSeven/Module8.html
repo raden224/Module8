@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Team Seven Movie Search</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			$('#tabs').tabs();
+		});
+	</script>
+	
+</head>
+<body>
+	<div id="tabs" class="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+				
+			</div>
+			<div class="navbar navbar-default navbar-inverse" role="navigation" style="margin-top: 20px;">
+				<ul class="nav navbar-nav ">
+					<li><a href="#search">Search</a></li>
+					<li><a href="#box" id="boxbtn">Box Office</a></li>
+					<li><a href="#theaters" id="intheabtn">In Theaters</a></li>
+					<li><a href="#upcoming" id="upcombtn">Upcoming</a></li>
+					<li><a href="#opening" id="openbtn">Opening</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="search" class="container btn-info" >	
+		<input type="text" id="formovie" style = "margin: 20px 0px;" placeholder = "Search Movies here" />
+		<div class="row">
+				<div id="searchmovie" class="col-md-4"></div>
+				<div id="searchresult" class="col-md-8"></div>
+			</div>
+			<div class="container" id="search_holder"> 
+				<ul class="list-inline list-unstyled"></ul>
+			</div>
+		</div>
+		
+		<div id="box" class="container btn-info" style = "padding: 20px 20px;">
+			<ul class="list-inline list-unstyled"></ul>
+		</div>
+		
+		<div id="theaters" class="container btn-info" style = "padding: 20px 20px;">
+			<ul class="list-inline list-unstyled"></ul>
+		</div>
+		
+		<div id="upcoming" class="container btn-info" style = "padding: 20px 20px;">
+			<ul class="list-inline list-unstyled"></ul>
+		</div>
+		
+		<div id="opening" class="container btn-info" style = "padding: 20px 20px;">
+			<ul class="list-inline list-unstyled"></ul>
+		</div>
+	</div>
+	<hr>
+	<center>
+	<footer> <div class="alert alert-success" style="width: 30%;"><center>Copyright by Team Seven, 2013</center></div> </footer>
+	</center>
+
+		<script type="text/x-handlebars-template" id="search-item">
+		<div class="row">
+		<li><div class="col-md-2"><p>{{title}}</p><p><img src="{{posters.profile}}" class='img-thumbnail ' alt="" /></p></div>
+		<div class="col-md-10" style="text-align:justify;"><br>Synopsis:<p>{{synopsis}}</p><p>Year: {{year}}</p><p>Rating: {{mpaa_rating}} ; {{ratings.critics_score}}</p></div></li>
+		</div><br><hr><br>
+			
+		</script>
+	
+		<script type="text/javascript" src="js/search.js"></script>
+		<script type="text/javascript" src="js/handlebars.js"></script>
+	
+</body>
+</html>
